@@ -13,7 +13,7 @@ class RestaurantMenuApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Restaurant Menu',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),
       home: const MenuScreen(),
     );
@@ -147,7 +147,7 @@ class MenuScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.brown,
       ),
       body: ListView.builder(
         itemCount: menuCategories.length,
@@ -168,7 +168,7 @@ class FoodCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       elevation: 3,
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
@@ -186,7 +186,7 @@ class FoodCategoryCard extends StatelessWidget {
             leading: Icon(
               category.icon,
               size: 45,
-              color: Colors.orange,
+              color: Colors.orangeAccent,
             ),
             title: Text(
               category.categoryName,
@@ -218,7 +218,7 @@ class CategoryDetailScreen extends StatelessWidget {
           category.categoryName,
           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.brown,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: ListView.separated(
@@ -233,15 +233,15 @@ class CategoryDetailScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
               child: Image.network(
                 item.imageUrl,
-                width: 55,
-                height: 55,
+                width: 60,
+                height: 60,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
-                    width: 55,
-                    height: 55,
+                    width: 60,
+                    height: 60,
                     color: Colors.grey.shade200,
-                    child: const Icon(Icons.fastfood, color: Colors.orange),
+                    child: const Icon(Icons.fastfood, color: Colors.brown),
                   );
                 },
               ),
